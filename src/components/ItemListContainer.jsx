@@ -1,7 +1,9 @@
+import styles from '../styles/itemListcontainer.module.scss';
+
 const ItemListContainer = (props) => {
     return (
         <div>
-            <h2>{props.mensaje}</h2>
+            <h1 className={styles.h1}>{props.mensaje}</h1>
         </div>
     );
 }
