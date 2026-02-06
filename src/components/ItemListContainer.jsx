@@ -18,8 +18,6 @@ const ItemListContainer = (props) => {
         <div>
             <h1 className={styles.h1}>{props.mensaje}</h1>
 
-            {/* data.map((producto => <p key={producto.id}>{producto.nombre}</p> )) */}
-
             <ItemList data={data} />
         </div>
     );

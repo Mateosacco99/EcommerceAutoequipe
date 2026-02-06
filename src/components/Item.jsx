@@ -1,4 +1,3 @@
-import React from 'react'
 import styles from '../styles/item.module.scss';
 import {BotonGenerico} from './BotonGenerico';
 
