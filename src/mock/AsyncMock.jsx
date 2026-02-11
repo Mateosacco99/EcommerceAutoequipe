@@ -43,3 +43,16 @@ export const getProductos = () => {
         }, 3000)
     })
 };
+
+export const getOneProduct = (id)=> {
+    return new Promise ((resolve, reject)=>{
+        setTimeout(()=>{
+            if(error){
+                reject('El producto no existe')
+            }else{
+                let product = productos.find((prod)=> prod.id === parseInt(id))
+                resolve(product)
+            }
+        },2000)
+    })
+}

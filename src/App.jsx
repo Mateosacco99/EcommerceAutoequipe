@@ -14,8 +14,7 @@ function App() {
       <NavBar />
       <Routes>
         <Route path='/' element={<ItemListContainerHOC mensaje="Bienvenidos a AutoEquipe!" />} />
-        <Route path='/item' element={<ItemDetailContainer />} />
-        <Route path='/rym' element={<FetchApi />} />
+        <Route path='/item/:id' element={<ItemDetailContainer />} />
       </Routes>
     </BrowserRouter>
   )

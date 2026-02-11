@@ -1,0 +1,160 @@
+@use 'variables' as *;
+
+.detailContainer {
+  display: flex;
+  gap: 40px;
+  max-width: 1100px;
+  margin: 40px auto;
+  padding: 20px 30px;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.imageSection {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  background-color: #f8f8f8;
+  border-radius: 8px;
+  padding: 30px;
+}
+
+.image {
+  max-width: 100%;
+  max-height: 450px;
+  object-fit: contain;
+}
+
+.infoSection {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.title {
+  font-size: 1.6rem;
+  font-weight: 700;
+  color: #1a1a1a;
+  margin: 0;
+  line-height: 1.3;
+}
+
+.price {
+  font-size: 2rem;
+  font-weight: 700;
+  color: #1a1a1a;
+  margin: 8px 0 0;
+}
+
+.envio {
+  color: #00a650;
+  font-size: 0.95rem;
+  font-weight: 600;
+  margin: 4px 0 8px;
+}
+
+.counterWrapper {
+  margin: 12px 0;
+  padding: 16px 0;
+  border-top: 1px solid #eee;
+  border-bottom: 1px solid #eee;
+
+  :global(.counter-container) {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+  }
+
+  :global(.counter-controls) {
+    display: flex;
+    align-items: center;
+    border: 1px solid #ddd;
+    border-radius: 6px;
+    overflow: hidden;
+
+    button {
+      width: 40px;
+      height: 40px;
+      border: none;
+      background: #fff;
+      font-size: 1.2rem;
+      cursor: pointer;
+      color: $autoequipe-blue;
+      font-weight: 700;
+      transition: background 0.2s;
+
+      &:hover {
+        background: #f0f0f0;
+      }
+    }
+  }
+
+  :global(.counter-value) {
+    min-width: 40px;
+    text-align: center;
+    font-size: 1.1rem;
+    font-weight: 500;
+    border-left: 1px solid #ddd;
+    border-right: 1px solid #ddd;
+    padding: 8px 0;
+  }
+
+  :global(.buy-btn) {
+    background-color: $autoequipe-blue;
+    color: #fff;
+    border: none;
+    border-radius: 6px;
+    padding: 10px 28px;
+    font-size: 0.95rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    cursor: pointer;
+    transition: background 0.2s;
+
+    &:hover {
+      background-color: darken($autoequipe-blue, 8%);
+    }
+  }
+}
+
+.description {
+  margin-top: 8px;
+}
+
+.descriptionTitle {
+  font-size: 1.15rem;
+  font-weight: 700;
+  color: #1a1a1a;
+  margin: 0 0 10px;
+}
+
+.description p {
+  font-size: 0.95rem;
+  color: #555;
+  line-height: 1.6;
+  margin: 4px 0;
+}
+
+.stock {
+  font-weight: 600;
+  color: #333;
+  margin-top: 8px;
+}
+
+@media (max-width: 768px) {
+  .detailContainer {
+    flex-direction: column;
+    padding: 16px;
+    gap: 20px;
+  }
+
+  .imageSection {
+    padding: 20px;
+  }
+
+  .image {
+    max-height: 300px;
+  }
+}
