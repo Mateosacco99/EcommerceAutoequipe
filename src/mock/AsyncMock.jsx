@@ -26,6 +26,33 @@ const productos = [
         categoria: 'neumaticosAuto',
         imagen: '../../public/img/Primacy-4-Unidad.png'
     },
+    {
+        id: 4,
+        nombre: "Neumatico Michelin LTX Force",
+        descripcion: "265/60 R18 110T",
+        stock: 10,
+        precio: 472346,
+        categoria: 'neumaticosCamioneta',
+        imagen: '../../public/img/LTX-Force-Unidad.png'
+    },
+    {
+        id: 5,
+        nombre: "Neumatico Michelin Agilis 3",
+        descripcion: "215/65 R16 106/104T",
+        stock: 10,
+        precio: 396638,
+        categoria: 'neumaticosAuto',
+        imagen: '../../public/img/Agilis-3-Unidad.png'
+    },
+    {
+        id: 6,
+        nombre: "Neumatico Michelin Agilis 3",
+        descripcion: "225/75 R16 118/116R",
+        stock: 10,
+        precio: 428587,
+        categoria: 'neumaticosAuto',
+        imagen: '../../public/img/Agilis-3-Unidad.png'
+    },
 ];
 
 let error = false;
