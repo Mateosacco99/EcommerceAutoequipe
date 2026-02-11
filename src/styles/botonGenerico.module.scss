@@ -60,3 +60,33 @@
     color: $autoequipe-blue;
     background-color: transparent;
 }
+
+.botonCounter {
+    width: 40px;
+    height: 40px;
+    background: #fff;
+    font-size: 1.2rem;
+    color: $autoequipe-blue;
+    font-weight: 700;
+    padding: 0;
+    border-radius: 0;
+
+    &:hover:not(:disabled) {
+        background: #f0f0f0;
+        color: $autoequipe-blue;
+    }
+}
+
+.botonAgregar {
+    background-color: $autoequipe-blue;
+    color: #fff;
+    padding: 10px 28px;
+    font-size: 0.95rem;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+
+    &:hover:not(:disabled) {
+        background-color: color.adjust($autoequipe-blue, $lightness: -8%);
+        color: #fff;
+    }
+}

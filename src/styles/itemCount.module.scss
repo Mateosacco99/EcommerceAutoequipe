@@ -1,0 +1,25 @@
+@use 'variables' as *;
+
+.counterContainer {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+
+.counterControls {
+  display: flex;
+  align-items: center;
+  border: 1px solid #ddd;
+  border-radius: 6px;
+  overflow: hidden;
+}
+
+.counterValue {
+  min-width: 40px;
+  text-align: center;
+  font-size: 1.1rem;
+  font-weight: 500;
+  border-left: 1px solid #ddd;
+  border-right: 1px solid #ddd;
+  padding: 8px 0;
+}

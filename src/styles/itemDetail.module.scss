@@ -59,64 +59,6 @@
   padding: 16px 0;
   border-top: 1px solid #eee;
   border-bottom: 1px solid #eee;
-
-  :global(.counter-container) {
-    display: flex;
-    align-items: center;
-    gap: 16px;
-  }
-
-  :global(.counter-controls) {
-    display: flex;
-    align-items: center;
-    border: 1px solid #ddd;
-    border-radius: 6px;
-    overflow: hidden;
-
-    button {
-      width: 40px;
-      height: 40px;
-      border: none;
-      background: #fff;
-      font-size: 1.2rem;
-      cursor: pointer;
-      color: $autoequipe-blue;
-      font-weight: 700;
-      transition: background 0.2s;
-
-      &:hover {
-        background: #f0f0f0;
-      }
-    }
-  }
-
-  :global(.counter-value) {
-    min-width: 40px;
-    text-align: center;
-    font-size: 1.1rem;
-    font-weight: 500;
-    border-left: 1px solid #ddd;
-    border-right: 1px solid #ddd;
-    padding: 8px 0;
-  }
-
-  :global(.buy-btn) {
-    background-color: $autoequipe-blue;
-    color: #fff;
-    border: none;
-    border-radius: 6px;
-    padding: 10px 28px;
-    font-size: 0.95rem;
-    font-weight: 700;
-    text-transform: uppercase;
-    letter-spacing: 0.5px;
-    cursor: pointer;
-    transition: background 0.2s;
-
-    &:hover {
-      background-color: darken($autoequipe-blue, 8%);
-    }
-  }
 }
 
 .description {
