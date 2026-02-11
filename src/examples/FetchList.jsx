@@ -2,13 +2,9 @@ import React from 'react'
 import FetchItem from './FetchItem'
 
 const FetchList = ({personajes}) => {
-  if (!Array.isArray(personajes)) {
-    return <div>No characters available</div>
-  }
-
   return (
-    <div>
-      {personajes.map((personaje) => <FetchItem key={personaje.id} personaje={personaje} />)} 
+    <div style={{display:'flex', justifyContent:'space-around', alignItems:'center', flexWrap:'wrap'}}>
+        {personajes && personajes?.results?.map((pj)=> <FetchItem key={pj.id} pj={pj}/>)}
     </div>
   )
 }

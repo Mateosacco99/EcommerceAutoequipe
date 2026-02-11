@@ -1,15 +1,14 @@
 import React from 'react'
 import styles from './fetchItem.module.scss'
 
-const FetchItem = ({ personaje }) => {
-  const { name, image, species } = personaje
+const FetchItem = ({ pj }) => {
 
   return (
     <div className={styles.card}>
-      <img src={image} alt={name} className={styles.image} />
+      <img src={pj.image} className={styles.image} />
       <div className={styles.content}>
-        <h3 className={styles.name}>{name}</h3>
-        <p className={styles.species}>{species}</p>
+        <h3 className={styles.name}>{pj.name}</h3>
+        <p className={styles.species}>{pj.species}</p>
       </div>
     </div>
   )

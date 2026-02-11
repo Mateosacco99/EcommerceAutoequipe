@@ -1,16 +1,18 @@
-import React, {useEffect, useState} from 'react';
-import FetchList from './FetchList';
-import { useFetch } from '../hooks/useFetch';
+import React, { useEffect, useState } from 'react'
+import FetchList from './FetchList'
+import { useFetch } from '../hooks/useFetch'
 
 const FetchApi = () => {
-    const {data:personajes, loading, error} = useFetch('https://rickandmortyapi.com/api/character')
+      const {data:personajes, loading, error}= useFetch('https://rickandmortyapi.com/api/character')
 
-    return (
-        <div>
-            {loading ? <p>Cargando...</p> : <FetchList personajes={personajes} />}
+
+
+  return (
+    <div>
+        <h1>FetchApi</h1>
+        {loading ? <p>Cargando...</p> : <FetchList personajes={personajes}/>}
         </div>
-    )
-
+  )
 }
 
-export default FetchApi;
+export default FetchApi
