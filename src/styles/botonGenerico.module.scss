@@ -22,6 +22,16 @@
 
 }
 
+.botonNavegacion{
+    background-color: transparent;
+    color: #363636;
+
+    &:hover:not(:disabled){
+        background-color: color.adjust($autoequipe-blue, $lightness: -10%);
+        color: white;
+    }
+}
+
 .botonPrimario{
     border: solid 1px $autoequipe-blue;
     background-color: white;
