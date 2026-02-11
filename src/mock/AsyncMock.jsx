@@ -5,8 +5,8 @@ const productos = [
         descripcion: "Descripción del Producto 1",
         stock: 10,
         precio: 100,
-        categoria: 'categoria 1',
-        imagen: '../../public/img/Primacy-4-Unidad.png'
+        categoria: 'neumaticosCamioneta',
+        imagen: '../../public/img/LTX-Force-Unidad.png'
     },
     {
         id: 2,
@@ -14,7 +14,7 @@ const productos = [
         descripcion: "Descripción del Producto 2",
         stock: 10,
         precio: 100,
-        categoria: 'categoria 2',
+        categoria: 'neumaticosAuto',
         imagen: '../../public/img/Primacy-4-Unidad.png'
     },
     {
@@ -23,7 +23,7 @@ const productos = [
         descripcion: "Descripción del Producto 3",
         stock: 10,
         precio: 100,
-        categoria: 'categoria 3',
+        categoria: 'neumaticosAuto',
         imagen: '../../public/img/Primacy-4-Unidad.png'
     },
 ];

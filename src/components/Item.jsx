@@ -13,7 +13,6 @@ const Item = ({prod}) => {
         {prod.descripcion && <p className={styles.descripcion}>{prod.descripcion}</p>}
         <div className={styles.footer}>
           {prod.precio && <span className={styles.precio}>${prod.precio}</span>}
-          {prod.categoria && <span className={styles.categoria}>{prod.categoria}</span>}
         </div>
         <div className={styles.botonContainer}><BotonGenerico tipo="primario">Agregar al Carrito</BotonGenerico></div>
       </div>
