@@ -13,7 +13,7 @@ function App() {
     <BrowserRouter>
       <NavBar />
       <Routes>
-        <Route path='/' element={<ItemListContainerHOC mensaje="Bienvenidos a AutoEquipe!" />} />
+        <Route path='/' element={<ItemListContainerHOC />} />
         <Route path='/item/:id' element={<ItemDetailContainer />} />
       </Routes>
     </BrowserRouter>
