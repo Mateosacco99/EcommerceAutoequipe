@@ -15,8 +15,9 @@
 .imagen {
   width: 100%;
   height: 200px;
-  object-fit: cover;
+  object-fit: contain;
   display: block;
+  background-color: #f8f8f8;
 }
 
 .contenido {
@@ -37,11 +38,12 @@
   margin: 0 0 12px 0;
   line-height: 1.4;
   overflow: hidden;
+  text-align: center;
 }
 
 .footer {
   display: flex;
-  justify-content: space-between;
+  justify-content: center;
   align-items: center;
   gap: 8px;
 }
