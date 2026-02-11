@@ -1,28 +1,28 @@
 const productos = [
     {
         id: 1,
-        nombre: "Producto 1",
-        descripcion: "Descripción del Producto 1",
+        nombre: "Neumatico Michelin LTX Force",
+        descripcion: "225/65 R17 106H",
         stock: 10,
-        precio: 100,
+        precio: 335213,
         categoria: 'neumaticosCamioneta',
         imagen: '../../public/img/LTX-Force-Unidad.png'
     },
     {
         id: 2,
-        nombre: "Producto 2",
-        descripcion: "Descripción del Producto 2",
+        nombre: "Neumatico Michelin Primacy 4",
+        descripcion: "205/55 R16 91V",
         stock: 10,
-        precio: 100,
+        precio: 215489,
         categoria: 'neumaticosAuto',
         imagen: '../../public/img/Primacy-4-Unidad.png'
     },
     {
         id: 3,
-        nombre: "Producto 3",
-        descripcion: "Descripción del Producto 3",
+        nombre: "Neumatico Michelin Primacy 4",
+        descripcion: "225/45 R17 91V",
         stock: 10,
-        precio: 100,
+        precio: 255028,
         categoria: 'neumaticosAuto',
         imagen: '../../public/img/Primacy-4-Unidad.png'
     },
