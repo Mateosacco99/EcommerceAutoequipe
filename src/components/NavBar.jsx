@@ -8,10 +8,10 @@ const NavBar = () => {
     return (
         <nav className={styles['nav-container']}>
             <h1><img className={styles.logo} src="/Autoequipe.png" alt="Autoequipe" /></h1>
-            <BotonGenerico onClick={() => navigate('/')} tipo="primario">Inicio</BotonGenerico>
-            <BotonGenerico href="#" tipo="primario">Categorias</BotonGenerico>
-            <BotonGenerico href="#" tipo="primario">Sobre Nosotros</BotonGenerico>
-            <BotonGenerico href="#" tipo="primario">Contacto</BotonGenerico>
+            <BotonGenerico onClick={() => navigate('/')} tipo="navegacion">Inicio</BotonGenerico>
+            <BotonGenerico href="#" tipo="navegacion">Categorias</BotonGenerico>
+            <BotonGenerico href="#" tipo="navegacion">Sobre Nosotros</BotonGenerico>
+            <BotonGenerico href="#" tipo="navegacion">Contacto</BotonGenerico>
             <BotonGenerico href="#" tipo="carrito"><Cart /></BotonGenerico>
         </nav>
     );
