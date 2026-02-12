@@ -49,7 +49,7 @@ const NavBar = () => {
                     Categorias <FaChevronDown />
                 </BotonGenerico>
             </div>
-            <BotonGenerico href="#" tipo="navegacion">Sobre Nosotros</BotonGenerico>
+            <BotonGenerico onClick={() => navigate('/sobre-nosotros')} tipo="navegacion">Sobre Nosotros</BotonGenerico>
             <BotonGenerico href="#" tipo="navegacion">Contacto</BotonGenerico>
             <BotonGenerico href="#" tipo="carrito"><Cart /></BotonGenerico>
             {showDropdown && <CategoriasDropdown categorias={categorias} onMouseEnter={handleMouseEnter} onMouseLeave={handleMouseLeave} />}
