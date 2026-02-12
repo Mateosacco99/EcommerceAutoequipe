@@ -1,0 +1,17 @@
+@use 'variables' as *;
+
+.dropdown {
+  position: fixed;
+  top: 130px;
+  left: 0;
+  right: 0;
+  background-color: white;
+  border-bottom: 1px solid #ddd;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
+  z-index: 999;
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+  padding: 16px 2rem;
+  flex-wrap: wrap;
+}
