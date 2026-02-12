@@ -5,6 +5,7 @@ import { withLogging } from './hocs/withLogging.jsx'
 import { BrowserRouter, Routes, Route } from 'react-router-dom'
 import ItemDetailContainer from './components/ItemDetailContainer.jsx'
 import CategoriaContainer from './components/CategoriaContainer.jsx'
+import Error from './components/Error.jsx'
 import FetchApi from './examples/FetchApi.jsx'
 
 function App() {
@@ -17,6 +18,7 @@ function App() {
         <Route path='/' element={<ItemListContainerHOC />} />
         <Route path='/item/:id' element={<ItemDetailContainer />} />
         <Route path='/categoria/:nombre' element={<CategoriaContainer />} />
+        <Route path='*' element={<Error />} />
       </Routes>
     </BrowserRouter>
   )
