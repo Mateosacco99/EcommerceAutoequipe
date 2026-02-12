@@ -15,3 +15,13 @@
   padding: 16px 2rem;
   flex-wrap: wrap;
 }
+
+.dropdown::before {
+  content: '';
+  position: absolute;
+  top: -16px;
+  left: 0;
+  right: 0;
+  height: 16px;
+  pointer-events: auto;
+}

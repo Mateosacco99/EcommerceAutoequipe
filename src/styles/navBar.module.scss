@@ -15,8 +15,16 @@
   position: relative;
   display: flex;
   align-items: center;
-  padding-bottom: 42px;
-  margin-bottom: -16px;
+}
+
+.dropdownBridge {
+  position: fixed;
+  top: 95px;
+  left: 0;
+  right: 0;
+  height: 15px;
+  pointer-events: none;
+  z-index: 998;
 }
 
 .nav-item {
