@@ -16,7 +16,7 @@ const CategoriaContainer = () => {
 
   return (
     <div>
-      <ItemList data={data} /> : <p>Cargando...</p>
+      {data.length > 0 ? <ItemList data={data} /> : <p>Cargando...</p>}
     </div>
   )
 }

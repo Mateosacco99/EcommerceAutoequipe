@@ -18,7 +18,7 @@ const ItemListContainer = (props) => {
         <div>
             <h1 className={styles.h1}>{props.mensaje}</h1>
 
-            <ItemList data={data} /> : <p>Cargando...</p>
+            {data.length > 0 ? <ItemList data={data} /> : <p>Cargando...</p>}
         </div>
     );
 }
