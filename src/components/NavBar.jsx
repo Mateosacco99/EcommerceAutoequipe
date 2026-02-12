@@ -25,9 +25,12 @@ const NavBar = () => {
         <nav className={styles['nav-container']}>
             <h1><img className={styles.logo} src="/Autoequipe.png" alt="Autoequipe" /></h1>
             <BotonGenerico onClick={() => navigate('/')} tipo="navegacion">Inicio</BotonGenerico>
-            <div className={styles.categoriasWrapper}>
+            <div 
+                className={styles.categoriasWrapper}
+                onMouseEnter={() => setShowDropdown(true)}
+                onMouseLeave={() => setShowDropdown(false)}
+            >
                 <BotonGenerico 
-                    onClick={() => setShowDropdown(!showDropdown)} 
                     tipo="navegacion"
                 >
                     Categorias <FaChevronDown />
@@ -36,7 +39,7 @@ const NavBar = () => {
             <BotonGenerico href="#" tipo="navegacion">Sobre Nosotros</BotonGenerico>
             <BotonGenerico href="#" tipo="navegacion">Contacto</BotonGenerico>
             <BotonGenerico href="#" tipo="carrito"><Cart /></BotonGenerico>
-            {showDropdown && <CategoriasDropdown categorias={categorias} onClose={() => setShowDropdown(false)} />}
+            {showDropdown && <CategoriasDropdown categorias={categorias} onMouseEnter={() => setShowDropdown(true)} onMouseLeave={() => setShowDropdown(false)} />}
         </nav>
     );
 }
