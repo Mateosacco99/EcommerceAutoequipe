@@ -5,7 +5,7 @@ const productos = [
         descripcion: "225/65 R17 106H",
         stock: 10,
         precio: 335213,
-        categoria: 'neumaticosCamioneta',
+        categoria: 'Neumaticos para Camioneta',
         imagen: '../../public/img/LTX-Force-Unidad.png'
     },
     {
@@ -14,7 +14,7 @@ const productos = [
         descripcion: "205/55 R16 91V",
         stock: 10,
         precio: 215489,
-        categoria: 'neumaticosAuto',
+        categoria: 'Neumaticos para Auto',
         imagen: '../../public/img/Primacy-4-Unidad.png'
     },
     {
@@ -23,7 +23,7 @@ const productos = [
         descripcion: "225/45 R17 91V",
         stock: 10,
         precio: 255028,
-        categoria: 'neumaticosAuto',
+        categoria: 'Neumaticos para Auto',
         imagen: '../../public/img/Primacy-4-Unidad.png'
     },
     {
@@ -32,7 +32,7 @@ const productos = [
         descripcion: "265/60 R18 110T",
         stock: 10,
         precio: 472346,
-        categoria: 'neumaticosCamioneta',
+        categoria: 'Neumaticos para Camioneta',
         imagen: '../../public/img/LTX-Force-Unidad.png'
     },
     {
@@ -41,7 +41,7 @@ const productos = [
         descripcion: "215/65 R16 106/104T",
         stock: 10,
         precio: 396638,
-        categoria: 'neumaticosAuto',
+        categoria: 'Neumaticos de Carga',
         imagen: '../../public/img/Agilis-3-Unidad.png'
     },
     {
@@ -50,7 +50,7 @@ const productos = [
         descripcion: "225/75 R16 118/116R",
         stock: 10,
         precio: 428587,
-        categoria: 'neumaticosAuto',
+        categoria: 'Neumaticos de Carga',
         imagen: '../../public/img/Agilis-3-Unidad.png'
     },
 ];
