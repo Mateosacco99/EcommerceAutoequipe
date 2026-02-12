@@ -1,6 +1,9 @@
 .itemList {
     display: grid;
-    grid-template-columns: repeat(4, 1fr);
+    grid-template-columns: repeat(4, minmax(200px, 1fr));
     gap: 1.5rem;
-    margin: 2rem;
+    margin: 2rem auto;
+    max-width: 1200px;
+    width: 100%;
+    padding: 0 1rem;
 }
