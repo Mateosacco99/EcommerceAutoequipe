@@ -5,8 +5,16 @@
   border: whitesmoke 1px solid;
   padding: 2rem;
   display: flex;
-    justify-content: space-between;
-  overflow: hidden;
+  justify-content: space-between;
+  align-items: center;
+  gap: 1rem;
+  position: relative;
+}
+
+.categoriasWrapper {
+  position: relative;
+  display: flex;
+  align-items: center;
 }
 
 .nav-item {

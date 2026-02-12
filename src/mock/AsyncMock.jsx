@@ -83,3 +83,16 @@ export const getOneProduct = (id)=> {
         },2000)
     })
 }
+
+export const getProductosByCategoria = (categoria)=> {
+    return new Promise ((resolve, reject)=>{
+        setTimeout(()=>{
+            if(error){
+                reject('Error al obtener productos por categoría')
+            }else{
+                let products = productos.filter((prod)=> prod.categoria === categoria)
+                resolve(products)
+            }
+        },2000)
+    })
+}
