@@ -13,7 +13,7 @@ const ItemDetail = ({detail}) => {
       </div>
       <div className={styles.infoSection}>
         <h1 className={styles.title}>{detail.nombre}</h1>
-        <p className={styles.price}>${detail.precio},00</p>
+        <p className={styles.price}>${detail.precio.toLocaleString('es-AR')}</p>
         <p className={styles.envio}>Envío gratis</p>
         <div className={styles.counterWrapper}>
           <ItemCount stock={detail.stock} onAdd={onAdd}/>
