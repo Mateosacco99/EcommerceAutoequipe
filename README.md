@@ -1,5 +1,18 @@
-#instalacion: npm install
+# AutoEquipe Ecommerce
 
-#correr proyecto: npm run dev
+- Proyecto final para el curso de React
 
-#correr local para ver en mobile: npm run dev -- --host
+
+### Instalacion
+- clonar repo
+
+- cd a carpeta del repo
+
+- npm install
+
+### Correr proyecto
+- npm run dev
+
+### correr local para ver en mobile
+
+- npm run dev -- --host
