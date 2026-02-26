@@ -8,21 +8,24 @@ import CategoriaContainer from './components/CategoriaContainer.jsx'
 import About from './components/About.jsx'
 import Error from './components/Error.jsx'
 import FetchApi from './examples/FetchApi.jsx'
+import { CartProvider } from './context/CartContext.jsx'
 
 function App() {
   const ItemListContainerHOC = withLogging(ItemListContainer);
 
   return (
-    <BrowserRouter>
-      <NavBar />
-      <Routes>
-        <Route path='/' element={<ItemListContainer />} />
-        <Route path='/item/:id' element={<ItemDetailContainer />} />
-        <Route path='/categoria/:nombre' element={<CategoriaContainer />} />
-        <Route path='/sobre-nosotros' element={<About />} />
-        <Route path='*' element={<Error />} />
-      </Routes>
-    </BrowserRouter>
+    <CartProvider>
+      <BrowserRouter>
+        <NavBar />
+        <Routes>
+          <Route path='/' element={<ItemListContainer />} />
+          <Route path='/item/:id' element={<ItemDetailContainer />} />
+          <Route path='/categoria/:nombre' element={<CategoriaContainer />} />
+          <Route path='/sobre-nosotros' element={<About />} />
+          <Route path='*' element={<Error />} />
+        </Routes>
+      </BrowserRouter>
+    </CartProvider>
   )
 }
 

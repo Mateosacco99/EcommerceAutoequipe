@@ -1,8 +1,11 @@
 import React from 'react'
 import ItemCount from './ItemCount';
 import styles from '../styles/itemDetail.module.scss';
+import { CartContext } from '../context/CartContext.jsx'
+import { useContext } from 'react'
 
 const ItemDetail = ({detail}) => {
+  const {cart} = useContext(CartContext)
   const onAdd = (cantidad)=>{
     console.log(`Agregaste del  ${detail.name},  ${cantidad} unidades`)
   }
