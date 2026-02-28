@@ -27,6 +27,7 @@ const CartContainer = () => {
             <img src={item.imagen} alt={item.nombre} className={styles.itemImage} />
             <div className={styles.itemInfo}>
               <h3 className={styles.itemName}>{item.nombre}</h3>
+              <h3 className={styles.itemName}>{item.descripcion}</h3>
               <p className={styles.envioGratis}>ENVÍO GRATIS</p>
             </div>
             <div className={styles.quantityControls}>
