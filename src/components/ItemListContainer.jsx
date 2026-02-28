@@ -1,6 +1,7 @@
 import styles from '../styles/itemListcontainer.module.scss';
-import { getProductos } from '../mock/AsyncMock';
+import { getProductos, getProductosByCategoria } from '../mock/AsyncMock';
 import { useEffect, useState } from 'react';
+import { useParams } from 'react-router-dom';
 import ItemList from './ItemList';
 import Loader from './Loader';
 
@@ -8,12 +9,17 @@ import Loader from './Loader';
 const ItemListContainer = (props) => {
 
     const [data, setData] = useState([]);
+    const { nombre } = useParams();
 
     useEffect(() => {
-        getProductos()
+        setData([]);
+        
+        const fetchFunction = nombre ? getProductosByCategoria(nombre) : getProductos();
+        
+        fetchFunction
             .then(respuesta => setData(respuesta))
             .catch(error => console.log(error));
-    }, []);
+    }, [nombre]);
 
     return (
         <div>
