@@ -5,9 +5,10 @@ import { CartContext } from '../context/CartContext.jsx'
 import { useContext } from 'react'
 
 const ItemDetail = ({detail}) => {
-  const {cart} = useContext(CartContext)
+  const {cart, addItem} = useContext(CartContext)
   const onAdd = (cantidad)=>{
     console.log(`Agregaste del  ${detail.name},  ${cantidad} unidades`)
+    addItem(detail, cantidad)
   }
   return (
     <div className={styles.detailContainer}>

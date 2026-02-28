@@ -24,7 +24,7 @@ const ItemCount = ({stock, onAdd})=> {
         <span className={styles.counterValue}>{count}</span>
         <BotonGenerico tipo="counter" onClick={sumar}>›</BotonGenerico>
       </div>
-      <BotonGenerico tipo="agregar" onClick={()=>onAdd(count)}>
+      <BotonGenerico tipo="agregar" onClick={()=>onAdd(count)} disabled={count === 0 || stock === 0}>
         Agregar al Carrito
       </BotonGenerico>
     </div>
