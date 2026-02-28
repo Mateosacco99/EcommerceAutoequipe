@@ -3,6 +3,7 @@ import { getProductosByCategoria } from '../mock/AsyncMock'
 import { useParams } from 'react-router-dom'
 import ItemList from './ItemList'
 import styles from '../styles/itemListcontainer.module.scss'
+import Loader from './Loader'
 
 const CategoriaContainer = () => {
   const [data, setData] = useState([])
@@ -16,7 +17,7 @@ const CategoriaContainer = () => {
 
   return (
     <div>
-      {data.length > 0 ? <ItemList data={data} /> : <p>Cargando...</p>}
+      {data.length > 0 ? <ItemList data={data} /> : <Loader />}
     </div>
   )
 }

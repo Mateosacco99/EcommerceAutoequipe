@@ -2,6 +2,7 @@ import styles from '../styles/itemListcontainer.module.scss';
 import { getProductos } from '../mock/AsyncMock';
 import { useEffect, useState } from 'react';
 import ItemList from './ItemList';
+import Loader from './Loader';
 
 
 const ItemListContainer = (props) => {
@@ -18,7 +19,7 @@ const ItemListContainer = (props) => {
         <div>
             <h1 className={styles.h1}>{props.mensaje}</h1>
 
-            {data.length > 0 ? <ItemList data={data} /> : <p>Cargando...</p>}
+            {data.length > 0 ? <ItemList data={data} /> : <Loader />}
         </div>
     );
 }
