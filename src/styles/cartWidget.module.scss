@@ -1,0 +1,29 @@
+@use '../styles/_variables.scss' as *;
+
+.cartContainer {
+  position: relative;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.cartIcon {
+  font-size: 1.5rem;
+  color: $autoequipe-blue;
+  display: flex;
+  align-items: center;
+}
+
+.cartCount {
+  background-color: $autoequipe-blue;
+  color: white;
+  border-radius: 50%;
+  min-width: 20px;
+  height: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 0.75rem;
+  font-weight: 600;
+  padding: 2px;
+}

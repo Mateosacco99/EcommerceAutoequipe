@@ -2,13 +2,19 @@ import React from 'react'
 import ItemCount from './ItemCount';
 import styles from '../styles/itemDetail.module.scss';
 import { CartContext } from '../context/CartContext.jsx'
-import { useContext } from 'react'
+import { useContext, useState } from 'react'
+import { useNavigate } from 'react-router-dom'
+import { BotonGenerico } from './BotonGenerico.jsx';
 
 const ItemDetail = ({detail}) => {
-  const {cart, addItem} = useContext(CartContext)
+  const {addItem} = useContext(CartContext)
+  const [purchase, setPurchase] = useState(false)
+  const navigate = useNavigate()
+
   const onAdd = (cantidad)=>{
     console.log(`Agregaste del  ${detail.name},  ${cantidad} unidades`)
     addItem(detail, cantidad)
+    setPurchase(true)
   }
   return (
     <div className={styles.detailContainer}>
@@ -20,7 +26,7 @@ const ItemDetail = ({detail}) => {
         <p className={styles.price}>${detail.precio.toLocaleString('es-AR')}</p>
         <p className={styles.envio}>Envío gratis</p>
         <div className={styles.counterWrapper}>
-          <ItemCount stock={detail.stock} onAdd={onAdd}/>
+          {purchase ? <BotonGenerico onClick={() => navigate('/cart')}>Ir al carrito</BotonGenerico> : <ItemCount stock={detail.stock} onAdd={onAdd} />}
         </div>
         <div className={styles.description}>
           <h3 className={styles.descriptionTitle}>Descripción</h3>

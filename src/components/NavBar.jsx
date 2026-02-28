@@ -51,7 +51,7 @@ const NavBar = () => {
             </div>
             <BotonGenerico onClick={() => navigate('/sobre-nosotros')} tipo="navegacion">Sobre Nosotros</BotonGenerico>
             <BotonGenerico href="#" tipo="navegacion" disabled>Contacto </BotonGenerico>
-            <BotonGenerico href="#" tipo="carrito"><Cart /></BotonGenerico>
+            <BotonGenerico onClick={() => navigate('/cart')} tipo="carrito"><Cart /></BotonGenerico>
             {showDropdown && <CategoriasDropdown categorias={categorias} onMouseEnter={handleMouseEnter} onMouseLeave={handleMouseLeave} />}
         </nav>
     );
