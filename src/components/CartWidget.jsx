@@ -6,7 +6,7 @@ import styles from "../styles/cartWidget.module.scss";
 const Cart = () => {
     const { cart } = useContext(CartContext);
     
-    const totalItems = cart.reduce((total, item) => total + item.qty, 0);
+    const totalItems = cart?.reduce((total, item) => total + item.qty, 0) || 0;
 
     return (
         <div className={styles.cartContainer}>
