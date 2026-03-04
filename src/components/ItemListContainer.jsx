@@ -10,9 +10,11 @@ import { db } from '../service/firebase';
 const ItemListContainer = (props) => {
 
     const [data, setData] = useState([]);
+    const [loading, setLoading] = useState(true);
     const { nombre } = useParams();
 
     useEffect(() => {
+        setLoading(true);
         const productos = collection(db, 'productos');
 
         getDocs(productos)
@@ -23,15 +25,21 @@ const ItemListContainer = (props) => {
                         ...doc.data()
                     }
                 });
-                setData(lista);
+                
+                const filteredData = nombre 
+                    ? lista.filter(item => item.categoria === nombre)
+                    : lista;
+                
+                setData(filteredData);
+                setLoading(false);
             });
-    },[]);
+    },[nombre]);
 
     return (
         <div>
             <h1 className={styles.h1}>{props.mensaje}</h1>
 
-            {data.length > 0 ? <ItemList data={data} /> : <Loader />}
+            {loading ? <Loader /> : <ItemList data={data} />}
         </div>
     );
 }
