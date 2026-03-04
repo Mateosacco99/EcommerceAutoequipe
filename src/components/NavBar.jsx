@@ -5,8 +5,10 @@ import { BotonGenerico } from './BotonGenerico';
 import { useNavigate } from 'react-router-dom';
 import { FaChevronDown } from 'react-icons/fa6';
 import { useState, useEffect } from 'react';
-import { getProductos } from '../mock/AsyncMock';
 import CategoriasDropdown from './CategoriasDropdown';
+import SearchBar from './SearchBar';
+import { collection, getDocs } from 'firebase/firestore';
+import { db } from '../service/firebase';
 
 const NavBar = () => {
     const navigate = useNavigate();
@@ -15,9 +17,15 @@ const NavBar = () => {
     const closeTimeoutRef = React.useRef(null);
 
     useEffect(() => {
-        getProductos()
-            .then(productos => {
-                const categoriasUnicas = [...new Set(productos.map(p => p.categoria))];
+        const productos = collection(db, 'productos');
+        
+        getDocs(productos)
+            .then((res) => {
+                const lista = res.docs.map((doc) => ({
+                    id: doc.id,
+                    ...doc.data()
+                }));
+                const categoriasUnicas = [...new Set(lista.map(p => p.categoria))];
                 setCategorias(categoriasUnicas);
             })
             .catch(error => console.log(error));
@@ -50,7 +58,7 @@ const NavBar = () => {
                 </BotonGenerico>
             </div>
             <BotonGenerico onClick={() => navigate('/sobre-nosotros')} tipo="navegacion">Sobre Nosotros</BotonGenerico>
-            <BotonGenerico href="#" tipo="navegacion" disabled>Contacto </BotonGenerico>
+            <SearchBar />
             <BotonGenerico onClick={() => navigate('/cart')} tipo="carrito"><Cart /></BotonGenerico>
             {showDropdown && <CategoriasDropdown categorias={categorias} onMouseEnter={handleMouseEnter} onMouseLeave={handleMouseLeave} />}
         </nav>

@@ -1,9 +1,10 @@
 import styles from '../styles/itemListcontainer.module.scss';
-import { getProductos, getProductosByCategoria } from '../mock/AsyncMock';
-import { useEffect, useState } from 'react';
+import { use, useEffect, useState } from 'react';
 import { useParams } from 'react-router-dom';
 import ItemList from './ItemList';
 import Loader from './Loader';
+import { collection, getDocs } from 'firebase/firestore';
+import { db } from '../service/firebase';
 
 
 const ItemListContainer = (props) => {
@@ -12,14 +13,19 @@ const ItemListContainer = (props) => {
     const { nombre } = useParams();
 
     useEffect(() => {
-        setData([]);
-        
-        const fetchFunction = nombre ? getProductosByCategoria(nombre) : getProductos();
-        
-        fetchFunction
-            .then(respuesta => setData(respuesta))
-            .catch(error => console.log(error));
-    }, [nombre]);
+        const productos = collection(db, 'productos');
+
+        getDocs(productos)
+            .then((res) => {
+                const lista = res.docs.map((doc) => {
+                    return {
+                        id: doc.id,
+                        ...doc.data()
+                    }
+                });
+                setData(lista);
+            });
+    },[]);
 
     return (
         <div>
