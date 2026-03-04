@@ -37,7 +37,7 @@ const SearchBar = () => {
   }
 
   const handleSelectProduct = (id) => {
-    navigate(`/detalle/${id}`)
+    navigate(`/item/${id}`)
     setSearchTerm('')
     setShowResults(false)
   }
@@ -63,7 +63,7 @@ const SearchBar = () => {
             <div
               key={producto.id}
               className={styles.resultItem}
-              onClick={() => handleSelectProduct(producto.id)}
+              onMouseDown={() => handleSelectProduct(producto.id)}
             >
               <img src={producto.img} alt={producto.nombre} className={styles.resultImg} />
               <div className={styles.resultInfo}>
