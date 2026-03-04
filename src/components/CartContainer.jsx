@@ -3,9 +3,11 @@ import { CartContext } from '../context/CartContext'
 import { FaTrash } from 'react-icons/fa6'
 import styles from '../styles/cartContainer.module.scss'
 import { BotonGenerico } from './BotonGenerico'
+import { useNavigate } from 'react-router-dom'
 
 const CartContainer = () => {
   const { cart, removeItem, incrementQty, decreaseQty } = useContext(CartContext)
+  const navigate = useNavigate()
 
   const totalPrice = cart.reduce((total, item) => total + (item.precio * item.qty), 0)
 
@@ -59,6 +61,11 @@ const CartContainer = () => {
       </div>
       <div className={styles.cartSummary}>
         <h2>Total: ${totalPrice.toLocaleString('es-AR')}</h2>
+      </div>
+      <div className={styles.checkoutButton}>
+        <BotonGenerico tipo="primario" onClick={() => navigate('/checkout')}>
+          Finalizar Compra
+        </BotonGenerico>
       </div>
     </div>
   )

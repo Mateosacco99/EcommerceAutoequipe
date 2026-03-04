@@ -1,4 +1,3 @@
-import { useState } from 'react'
 import NavBar from './components/NavBar.jsx'
 import ItemListContainer from './components/ItemListContainer.jsx'
 import { BrowserRouter, Routes, Route } from 'react-router-dom'
@@ -7,6 +6,7 @@ import About from './components/About.jsx'
 import Error from './components/Error.jsx'
 import { CartProvider } from './context/CartContext.jsx'
 import CartContainer from './components/CartContainer.jsx'
+import Checkout from './components/Checkout.jsx'
 
 function App() {
 
@@ -20,6 +20,7 @@ function App() {
           <Route path='/categoria/:nombre' element={<ItemListContainer />} />
           <Route path='/sobre-nosotros' element={<About />} />
           <Route path='/cart' element={<CartContainer />} />
+          <Route path='/checkout' element={<Checkout />} />
           <Route path='*' element={<Error />} />
         </Routes>
       </BrowserRouter>
