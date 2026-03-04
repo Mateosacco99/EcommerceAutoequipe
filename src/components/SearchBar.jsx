@@ -65,10 +65,10 @@ const SearchBar = () => {
               className={styles.resultItem}
               onMouseDown={() => handleSelectProduct(producto.id)}
             >
-              <img src={producto.img} alt={producto.nombre} className={styles.resultImg} />
+              <img src={producto.imagen} alt={producto.nombre} className={styles.resultImg} />
               <div className={styles.resultInfo}>
                 <span className={styles.resultNombre}>{producto.nombre}</span>
-                <span className={styles.resultPrecio}>${producto.precio}</span>
+                <span className={styles.resultDescripcion}>{producto.descripcion}</span>
               </div>
             </div>
           ))}
