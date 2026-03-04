@@ -4,17 +4,19 @@ import Cart from './CartWidget';
 import { BotonGenerico } from './BotonGenerico';
 import { useNavigate } from 'react-router-dom';
 import { FaChevronDown } from 'react-icons/fa6';
-import { useState, useEffect } from 'react';
+import { useState, useEffect, useContext } from 'react';
 import CategoriasDropdown from './CategoriasDropdown';
 import SearchBar from './SearchBar';
 import { collection, getDocs } from 'firebase/firestore';
 import { db } from '../service/firebase';
+import { CartContext } from '../context/CartContext';
 
 const NavBar = () => {
     const navigate = useNavigate();
     const [showDropdown, setShowDropdown] = useState(false);
     const [categorias, setCategorias] = useState([]);
     const closeTimeoutRef = React.useRef(null);
+    const { cart } = useContext(CartContext);
 
     useEffect(() => {
         const productos = collection(db, 'productos');
@@ -59,7 +61,9 @@ const NavBar = () => {
             </div>
             <BotonGenerico onClick={() => navigate('/sobre-nosotros')} tipo="navegacion">Sobre Nosotros</BotonGenerico>
             <SearchBar />
-            <BotonGenerico onClick={() => navigate('/cart')} tipo="carrito"><Cart /></BotonGenerico>
+            {cart.length > 0 && (
+                <BotonGenerico onClick={() => navigate('/cart')} tipo="carrito"><Cart /></BotonGenerico>
+            )}
             {showDropdown && <CategoriasDropdown categorias={categorias} onMouseEnter={handleMouseEnter} onMouseLeave={handleMouseLeave} />}
         </nav>
     );
