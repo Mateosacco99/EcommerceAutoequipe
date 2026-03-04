@@ -1,4 +1,4 @@
-@import 'variables';
+@use '../styles/_variables.scss' as *;
 
 .modalOverlay {
   position: fixed;
