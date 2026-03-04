@@ -1,5 +1,6 @@
 import {createContext} from "react";
 import { useState } from "react";
+import Modal from "../components/Modal";
 
 export const CartContext = createContext({
     cart: [],
@@ -15,17 +16,53 @@ export const CartContext = createContext({
 
 export const CartProvider = ({children}) => {
     const [cart, setCart] = useState([]);
+    const [modalState, setModalState] = useState({
+        isOpen: false,
+        title: '',
+        message: ''
+    });
+
+    const showModal = (title, message) => {
+        setModalState({
+            isOpen: true,
+            title,
+            message
+        });
+    };
+
+    const closeModal = () => {
+        setModalState({
+            isOpen: false,
+            title: '',
+            message: ''
+        });
+    };
 
     const addItem = (item, cantidad) => {
         if(isInCart(item.id)){
             setCart(cart.map(product => {
                 if(product.id === item.id){
-                    return {...product, qty: product.qty + cantidad}
+                    const newQty = product.qty + cantidad
+                    if(newQty > product.stock){
+                        showModal(
+                            'Stock insuficiente',
+                            `No puedes agregar más de ${product.stock} unidades. Ya tienes ${product.qty} en el carrito.`
+                        );
+                        return product
+                    }
+                    return {...product, qty: newQty}
                 } else{
                     return product
                 }
             }))
         } else{
+            if(cantidad > item.stock){
+                showModal(
+                    'Stock insuficiente',
+                    `No puedes agregar más de ${item.stock} unidades.`
+                );
+                return
+            }
             setCart([...cart, {...item, qty:cantidad}])
         }
         console.log(cart)
@@ -54,9 +91,19 @@ export const CartProvider = ({children}) => {
     }
 
     const incrementQty = (id) => {
-        setCart(cart.map(product => 
-            product.id === id ? {...product, qty: product.qty + 1} : product
-        ))
+        setCart(cart.map(product => {
+            if(product.id === id){
+                if(product.qty >= product.stock){
+                    showModal(
+                        'Stock insuficiente',
+                        `No hay más stock disponible. Máximo: ${product.stock} unidades.`
+                    );
+                    return product
+                }
+                return {...product, qty: product.qty + 1}
+            }
+            return product
+        }))
     }
 
     const decreaseQty = (id) => {
@@ -72,6 +119,12 @@ export const CartProvider = ({children}) => {
     return(
         <CartContext.Provider value={{cart, setCart, addItem, clearCart, removeItem, isInCart, updateQuantity, incrementQty, decreaseQty}}>
             {children}
+            <Modal 
+                isOpen={modalState.isOpen}
+                onClose={closeModal}
+                title={modalState.title}
+                message={modalState.message}
+            />
         </CartContext.Provider>
     )
 }
