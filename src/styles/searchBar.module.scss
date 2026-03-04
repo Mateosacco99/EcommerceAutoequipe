@@ -1,0 +1,101 @@
+@use 'variables' as *;
+
+.searchContainer {
+  position: relative;
+  width: 300px;
+}
+
+.searchInput {
+  width: 100%;
+  padding: 0.6rem 1rem;
+  border: 2px solid #ccc;
+  border-radius: 25px;
+  font-size: 0.9rem;
+  outline: none;
+  transition: all 0.3s ease;
+  background-color: white;
+
+  &:focus {
+    border-color: $autoequipe-blue;
+    box-shadow: 0 0 10px rgba($autoequipe-blue, 0.2);
+  }
+
+  &::placeholder {
+    color: #999;
+  }
+}
+
+.resultsDropdown {
+  position: absolute;
+  top: calc(100% + 5px);
+  left: 0;
+  right: 0;
+  background: white;
+  border: 2px solid #ccc;
+  border-radius: 10px;
+  max-height: 400px;
+  overflow-y: auto;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.15);
+  z-index: 1000;
+}
+
+.resultItem {
+  padding: 0.8rem;
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  cursor: pointer;
+  transition: background-color 0.2s ease;
+  border-bottom: 1px solid #f0f0f0;
+
+  &:last-child {
+    border-bottom: none;
+  }
+
+  &:hover {
+    background-color: #f0f0f0;
+  }
+}
+
+.resultImg {
+  width: 50px;
+  height: 50px;
+  object-fit: cover;
+  border-radius: 5px;
+}
+
+.resultInfo {
+  display: flex;
+  flex-direction: column;
+  gap: 0.3rem;
+  flex: 1;
+}
+
+.resultNombre {
+  font-weight: 500;
+  color: $autoequipe-blue;
+  font-size: 0.95rem;
+}
+
+.resultPrecio {
+  color: $autoequipe-blue;
+  font-weight: bold;
+  font-size: 0.9rem;
+}
+
+.noResults {
+  padding: 1rem;
+  text-align: center;
+  color: #999;
+  font-style: italic;
+}
+
+@media (max-width: 768px) {
+  .searchContainer {
+    width: 100%;
+  }
+
+  .resultsDropdown {
+    max-height: 300px;
+  }
+}
