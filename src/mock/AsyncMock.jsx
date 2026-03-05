@@ -6,7 +6,7 @@ const productos = [
         stock: 10,
         precio: 335213,
         categoria: 'Neumaticos para Camioneta',
-        imagen: '../../public/img/LTX-Force-Unidad.png'
+        imagen: 'img/LTX-Force-Unidad.png'
     },
     {
         id: 2,
@@ -15,7 +15,7 @@ const productos = [
         stock: 10,
         precio: 215489,
         categoria: 'Neumaticos para Auto',
-        imagen: '../../public/img/Primacy-4-Unidad.png'
+        imagen: 'img/Primacy-4-Unidad.png'
     },
     {
         id: 3,
@@ -24,7 +24,7 @@ const productos = [
         stock: 10,
         precio: 255028,
         categoria: 'Neumaticos para Auto',
-        imagen: '../../public/img/Primacy-4-Unidad.png'
+        imagen: 'img/Primacy-4-Unidad.png'
     },
     {
         id: 4,
@@ -33,7 +33,7 @@ const productos = [
         stock: 10,
         precio: 472346,
         categoria: 'Neumaticos para Camioneta',
-        imagen: '../../public/img/LTX-Force-Unidad.png'
+        imagen: 'img/LTX-Force-Unidad.png'
     },
     {
         id: 5,
@@ -42,7 +42,7 @@ const productos = [
         stock: 10,
         precio: 396638,
         categoria: 'Neumaticos de Carga',
-        imagen: '../../public/img/Agilis-3-Unidad.png'
+        imagen: 'img/Agilis-3-Unidad.png'
     },
     {
         id: 6,
@@ -51,7 +51,7 @@ const productos = [
         stock: 10,
         precio: 428587,
         categoria: 'Neumaticos de Carga',
-        imagen: '../../public/img/Agilis-3-Unidad.png'
+        imagen: 'img/Agilis-3-Unidad.png'
     },
 ];
 
