@@ -1,4 +1,4 @@
-@import 'variables';
+@use '../styles/_variables.scss' as *;
 
 .checkoutContainer {
   max-width: 1200px;
